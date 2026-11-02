@@ -1,6 +1,6 @@
 My homework test automation homework #8 - EPAM IT Marathon 2026 (full stack development).
 
-Using Playwrigh and Java I created 8 tests. Its only a part of homework for "direction" 2 and "level" 1
+Using Playwrigh and Java I created 8 tests. Its only a part of homework for "direction" 2 and "level" 1.
 At first I create a new AWS acount and deploy a project.
 I not added any features to this project, then we have not full functional on this site.
 
