@@ -27,7 +27,7 @@ public class TestSuite {
     @Order(1)
     public void createNewAccountAndLoginWithValidCredentials() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(100));
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(width, height));
         page = context.newPage();
         page.navigate("https://d1lwtnsqdaha0i.cloudfront.net/main");
@@ -65,7 +65,7 @@ public class TestSuite {
     @Order(2)
     public void tryToCreateNewAccountWithAlreadyExistentEmail() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(100));
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(width, height));
         page = context.newPage();
         page.navigate("https://d1lwtnsqdaha0i.cloudfront.net/main");
@@ -96,7 +96,7 @@ public class TestSuite {
     @Order(3)
     public void tryToLoginWithValidMailAndValidPassword() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(100));
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(width, height));
         page = context.newPage();
         page.navigate("https://d1lwtnsqdaha0i.cloudfront.net/main");
@@ -119,7 +119,7 @@ public class TestSuite {
     @Order(4)
     public void tryToLoginWithInvalidMailAndValidPassword() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(100));
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(width, height));
         page = context.newPage();
         page.navigate("https://d1lwtnsqdaha0i.cloudfront.net/main");
@@ -142,7 +142,7 @@ public class TestSuite {
     @Order(5)
     public void tryToLoginWithValidMailAndInvalidPassword() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(100));
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(width, height));
         page = context.newPage();
         page.navigate("https://d1lwtnsqdaha0i.cloudfront.net/main");
@@ -165,7 +165,7 @@ public class TestSuite {
     @Order(6)
     public void tryToLoginWithInvalidMailAndInvalidPassword() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(100));
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(width, height));
         page = context.newPage();
         page.navigate("https://d1lwtnsqdaha0i.cloudfront.net/main");
@@ -189,7 +189,7 @@ public class TestSuite {
     @Order(7)
     public void tryToUseOneLetterInFirstNameWhenCreatingNewAccount() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(100));
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(width, height));
         page = context.newPage();
         page.navigate("https://d1lwtnsqdaha0i.cloudfront.net/main");
@@ -220,7 +220,7 @@ public class TestSuite {
     @Order(8)
     public void tryToUseOneLetterInLastNameWhenCreatingNewAccount() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(100));
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(width, height));
         page = context.newPage();
         page.navigate("https://d1lwtnsqdaha0i.cloudfront.net/main");
