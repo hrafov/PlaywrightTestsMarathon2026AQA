@@ -3,6 +3,7 @@ package login;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.*;
 import org.junit.Test;
+import org.junit.jupiter.api.*;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
@@ -11,9 +12,10 @@ import java.time.format.DateTimeFormatter;
 
 import java.awt.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestSuite {
-    private Playwright playwright;
-    private Browser browser;
+    private static Playwright playwright;
+    private static Browser browser;
     private BrowserContext context;
     private Page page;
     private final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -22,6 +24,7 @@ public class TestSuite {
 
     //tests started from button "Log in"(on the right upper side) and then "Create an Account"
     @Test
+    @Order(1)
     public void createNewAccountAndLoginWithValidCredentials() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
@@ -59,6 +62,7 @@ public class TestSuite {
     }
 
     @Test
+    @Order(2)
     public void tryToCreateNewAccountWithAlreadyExistentEmail() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
@@ -89,6 +93,7 @@ public class TestSuite {
 
     //tests started from button "Log in"(on the right upper side)
     @Test
+    @Order(3)
     public void tryToLoginWithValidMailAndValidPassword() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
@@ -111,6 +116,7 @@ public class TestSuite {
     }
 
     @Test
+    @Order(4)
     public void tryToLoginWithInvalidMailAndValidPassword() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
@@ -133,6 +139,7 @@ public class TestSuite {
     }
 
     @Test
+    @Order(5)
     public void tryToLoginWithValidMailAndInvalidPassword() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
@@ -155,6 +162,7 @@ public class TestSuite {
     }
 
     @Test
+    @Order(6)
     public void tryToLoginWithInvalidMailAndInvalidPassword() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
@@ -178,6 +186,7 @@ public class TestSuite {
 
     // checkin one letter in first name and last name when creating a new account
     @Test
+    @Order(7)
     public void tryToUseOneLetterInFirstNameWhenCreatingNewAccount() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
@@ -208,6 +217,7 @@ public class TestSuite {
     }
 
     @Test
+    @Order(8)
     public void tryToUseOneLetterInLastNameWhenCreatingNewAccount() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(100));
